@@ -5,7 +5,7 @@
 #include <sstream>
 
 
-//exercice fait avec Goulven Fournier
+//exercice fait avec Benjamin Niscoise
 
 std::vector<std::string> split(std::string s)
 {
