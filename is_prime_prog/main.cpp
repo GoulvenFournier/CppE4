@@ -1,13 +1,22 @@
 #include <iostream>
 #include <string>
-#include <cmath>
 #include <sstream>
 #include <vector>
-using namespace std;
+#include <math.h>
 
-bool isPrime(const long long& n)
+
+//Exercice fait avec Benjamin Niscoise
+bool isPrime(const long long n)
 {
-    for (int i = 2; i <= sqrt(n); i++)  // On peut démontrer qu'aller simplement jusqu'à la racine carrée suffit
+    if (n == 0)
+    {
+        return false;
+    }
+    if( n == 1)
+    {
+        return false;
+    }
+    for (int i = 2 ; i <= n / 2; i++)
     {
         if (n % i == 0)
         {
@@ -17,28 +26,29 @@ bool isPrime(const long long& n)
     return true;
 }
 
-int main(int argc, char* argv[])
-{   
-    long long n; 
-    do 
+
+
+
+int main()
+{
+    /*std::string x;
+    std::getline(std::cin >> std::ws, x);*/
+    long long n;
+    while (std::cin >> n)
     {
-        cin >> n;
-        if (cin.good())
+
+   
+        
+        
+        
+        if (isPrime(n))
         {
-            if (isPrime(n))
-            {
-                cout << n << " is a prime: True" << endl;
-            }
-            else
-            {
-                cout << n << " is not a prime: False" << endl;
-            }
+            std::cout << n << " is a prime: True" << std::endl;
         }
-        else 
+        else
         {
-            cin.clear();
-            break;
+            std::cout << n << " is a prime: False" << std::endl;
         }
-    } while ((cin.peek() != '\n'));
-    return 0;
-}
+    }
+    
+} 
